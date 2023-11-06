@@ -78,9 +78,9 @@ public:
 	~Array()
 	{
 		delete[] data;
-	};
+	}
 
-	&at(size_t n)
+	T& at(size_t n)
 	{
 		return data[n];
 	}
@@ -88,5 +88,101 @@ public:
 	size_t size() 
 	{
 		return N;
+	}
+};
+
+template <typename T>
+class Kolejka
+{
+	T tab[10];
+	int zajetosc = 0; //liczba elementow aktualnie znajdujacych sie w kolejce
+	bool pelna;			//przechowuje informacje czy kolejka jest pe³na
+	int indeks_ostatniego = -1;
+	int indeks_pierwszego = 0;
+
+public:
+
+	Kolejka() = default;
+	~Kolejka() = default;
+
+	bool czyPelna()
+	{
+		if (zajetosc <= 9)
+			return false;
+		else
+			return true;
+	}
+
+	bool czyPusta()
+	{
+		if (zajetosc == 0)
+			return true;
+		else
+			return false;
+	}
+	void wloz(T ostatni)
+	{	
+		if (zajetosc == 10)
+		{
+			std::cout << "Tablica jest pe³na, nie mo¿na zapisaæ elementu";
+			return;
+		}
+		else
+		{
+			zajetosc++;
+			if (indeks_ostatniego == 9)
+			{
+				indeks_ostatniego = 0;
+			}
+			else
+				indeks_ostatniego++;
+
+			tab[indeks_ostatniego] = ostatni;
+			
+		}
+	}
+
+	T wez()
+	{
+		if (zajetosc == 0)
+		{
+			std::cout << "Tablica jest pusta, nie mo¿na wziac elementu";
+			return " ";
+		}
+		else
+		{
+			zajetosc--;
+
+			T  pierwszy = tab[indeks_pierwszego];
+
+			if (indeks_pierwszego == 9)
+				indeks_pierwszego = 0;
+			
+			else
+				indeks_pierwszego++;
+
+			return pierwszy;
+		}
+	}
+
+	int ile_elem()
+	{
+		return zajetosc;
+	}
+
+	void drukuj()
+	{
+		std::cout << "Zawartosc tablicy: " << '\n';
+		int temp = indeks_pierwszego; //tymczasowy pierwszy element
+
+		for (int i = 0; i < zajetosc; i++)
+		{
+			std::cout << "[" << tab[temp] <<"], ";
+			if (temp == 9)
+				temp = 0;
+			else
+				temp++;
+		}
+		std::cout << '\n';
 	}
 };
