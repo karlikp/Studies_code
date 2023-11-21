@@ -17,7 +17,14 @@ int main()
         41, 77, 49, 49, 96, 35, 37, 21, 74, 25, 31, 41, 86, 66, 95, 86, 62, 53, 95, 66, 52, 16, 30, 90, 37, 33 });
 
     object.zad_2();
-
     object.zad_3();
+    object.zad_4();
+    object.zad_5();
+    object.zad_6();
+    object.zad_7();
+    object.zad_8();
+    object.zad_9();
+
+
 
 }

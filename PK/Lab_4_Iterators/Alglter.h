@@ -25,6 +25,12 @@ public:
    Alglter(vector <int> TEST_VALUE);
    void zad_2();
    void zad_3();
+   void zad_4();
+   void zad_5();
+   void zad_6();
+   void zad_7();
+   void zad_8();
+   void zad_9();
 
 };
 
