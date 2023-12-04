@@ -1,1 +1,2 @@
 C:\Users\piter\Desktop\Git_repos\Studies_code\PK\Lab_5_Containers\Project1\x64\Debug\Project1.exe
+C:\Users\Ryzen\Desktop\Git_repos\Studies_code\PK\Lab_5_Containers\x64\Debug\lab_5.exe
