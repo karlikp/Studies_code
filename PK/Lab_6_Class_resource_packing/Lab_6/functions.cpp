@@ -2,6 +2,9 @@
 #include <stdexcept>
 
 #include "functions.h"
+#include "Array.h"
+#include "Ustawienia.h"
+#include "Zasob.cpp"
 
 using namespace std;
 
@@ -62,5 +65,55 @@ bool check_conditions(int number, bool& condition1, bool& condition2, bool& cond
 
     return false;
 }
+
+void zad_2()
+{
+    cout << "Zadanie 2\n";
+    int size, index;
+    cout << "Wpisz rozmiar tablicy: ";
+    cin >> size;
+    cout << "Wpisz indeks elementu tablicy, ktory zostanie sprawdzony i wypisany"
+        " na dwa rozne sposoby: ";
+    cin >> index;
+
+    Array object(size);
+    object.show_element(index);
+    int element = object.get_element(index);
+
+    if (object.tab_exist)
+        cout << "Element o indeksie [" << index << "] = " << element << '\n';
+}
+
+void zad_3()
+{
+    cout << "Zadanie 3\n";
+
+    Ustawienia& pierwszy = Ustawienia::Instance();
+
+    string save_name, check_name;
+    int save_option, check_option;
+    
+    cout << "Wpisz nazwe opcji do zapisania: ";
+    cin >> save_name;
+    cout << "Wpisz numer opcji do zapisania: ";
+    cin >> save_option;
+
+    pierwszy.zapiszOpcje(save_name, save_option);
+
+    cout << "Wpisz nazwe opcji do sprawdzenia: ";
+    cin >> check_name;
+  
+    check_option = pierwszy.sprawdzOpcje(check_name);
+
+    if(pierwszy.available)
+    std::cout << "Pod nazwa [" << check_name << "] zapisana jest opcja nr: "
+        << check_option;
+
+    cout << '\n';
+
+    Zasob object;
+
+}
+
 
 

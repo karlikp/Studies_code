@@ -1,5 +1,4 @@
-﻿  Array.cpp
-  functions.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Studies_code\PK\Lab_6_Class_resource_packing\Lab_6\Array.cpp(14,2): error C2059: syntax error: '{'
-C:\Users\Ryzen\Desktop\Git_repos\Studies_code\PK\Lab_6_Class_resource_packing\Lab_6\Array.cpp(14,2): error C2143: syntax error: missing ';' before '{'
+﻿  functions.cpp
+  main.cpp
   Generating Code...
+  Lab_6.vcxproj -> C:\Users\Ryzen\Desktop\Git_repos\Studies_code\PK\Lab_6_Class_resource_packing\Lab_6\x64\Debug\Lab_6.exe

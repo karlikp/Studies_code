@@ -132,10 +132,14 @@
     <ClCompile Include="Array.cpp" />
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="UnikatowyWsk.cpp" />
+    <ClCompile Include="Ustawienia.cpp" />
+    <ClCompile Include="Zasob.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
     <ClInclude Include="functions.h" />
+    <ClInclude Include="Ustawienia.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

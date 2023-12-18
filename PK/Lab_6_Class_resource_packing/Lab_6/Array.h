@@ -4,21 +4,18 @@
 class Array
 {
 	int size;
-	int* tablica;
-	int tab_exist = true;
-
+	int* table;
 
 public:
-	Array(int size)
-	{
-	int* tablica = new int[size];
-	}
+	bool tab_exist = true;
 
-	~Array()
-	{
-		delete[] tablica;
-	}
+	Array(int size);
+
+	~Array();
+	
 	void show_element(int index);
+
+	int get_element(int index);
 	
 	
 };
