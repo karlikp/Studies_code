@@ -1,2 +1,0 @@
-C:\Users\piter\Desktop\Git_repos\Studies_code\PK\Lab_4_Iterators\x64\Debug\Lab_4_Iterators.exe
-C:\Users\Ryzen\Desktop\Git_repos\Studies_code\PK\Lab_4_Iterators\x64\Debug\Lab_4_Iterators.exe
