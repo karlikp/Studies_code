@@ -1,11 +1,9 @@
-#include "Functions.h"
+#include "Template.h"
+#include "Queue.h"
 
 int main()
 {
-#if 0
-	/*std::cout << "Multiplication is equel: " << multi(2.5, 5.3)
-		<< "\nAddition is equel: " << sum(3.6, 13) << std::endl;*/
-#endif
+
 
 	//Zad.1
 
@@ -28,14 +26,14 @@ int main()
 
 	//Zad.3
 
-	Kolejka<int> cyfry;
+	Queue<int> cyfry;
 	cyfry.wloz(1);
 	cyfry.wloz(4);
 	cyfry.wloz(7);
 	cyfry.drukuj();
 
 
-	Kolejka<std::string> wyrazy;
+	Queue<std::string> wyrazy;
 	wyrazy.wloz("mama");
 	wyrazy.wloz("tata");
 	wyrazy.wloz("brat");
