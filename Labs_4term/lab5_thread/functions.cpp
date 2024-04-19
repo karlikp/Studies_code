@@ -9,6 +9,26 @@
 
 #include "functions.h"
 
+void zad_1()
+{
+    constexpr size_t thread_number = 8;
+    constexpr double A = 1.0;
+    constexpr double B = 100.0;
+    constexpr double dx = 1e-6;
+
+    const double single_thread = checking_time([] {
+        std::cout << "Na jednym watku: " << calka(moja_funkcja, A, B, dx) << "\n";
+        });
+    std::cout << "Czas: " << single_thread << "s\n\n";
+
+    const double multi_thread = checking_time([] {
+        std::cout << "Na " << thread_number << " watkach: " << calka_rownolegle(thread_number, moja_funkcja, A, B, dx) << "\n";
+        });
+    std::cout << "Czas: " << multi_thread << "s\n";
+
+    std::cout << "Poprawa czasu: " << single_thread / multi_thread << "x\n";
+}
+
 double moja_funkcja(double x)
 {
     return std::sqrt(x);
@@ -33,7 +53,7 @@ double calka(std::function<double(double)> f, double a, double b, double dx)
     return result * sign;
 }
 
-double calka_rownolegle(size_t thread_number, std::function<double(double)> f, double a, double b, double dx)
+double calka_rownolegle(size_t thread_number, std::function<double(double)> f, double a, double b, double dx = 1e-12)
 {
     
     std::vector<std::future<double>> sub_results;
@@ -75,11 +95,15 @@ void zad_2()
 
     std::string dest_currency;
     do {
-        std::cout << "\n\n Wybierz walute docelowa, wpisz EUR lub USD: ";
+        std::cout << "\n\nWybierz walute docelowa, wpisz EUR lub USD: ";
         std::cin >> dest_currency;
     } while (not(dest_currency == "EUR" or dest_currency == "USD"));
 
-    std::cout << "\n Mozesz uzyskac" << cantor(amount, dest_currency) << dest_currency;
+    std::packaged_task<double(double, std::string)> task(cantor);
+    std::future<double> result = task.get_future();
+    std::thread t(std::move(task), amount, dest_currency);
+    t.join();
+    std::cout << "\nMozesz uzyskac " << result.get() << " " << dest_currency << "\n";
 }
 
 double cantor(double amount, std::string dest_currency)
