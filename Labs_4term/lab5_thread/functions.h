@@ -1,15 +1,8 @@
-#include <iostream>
-#include <thread>
-#include <chrono>
-#include <future>
-#include <vector>
-#include <cmath>
 #include <functional>
-#include <iomanip>
 
 #pragma once
 
-//void zad_1();
+void zad_1();
 
 double moja_funkcja(double x);
 
